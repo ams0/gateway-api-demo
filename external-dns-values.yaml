@@ -1,0 +1,17 @@
+
+extraVolumeMounts:
+  - name: azure-config-file
+    mountPath: /etc/kubernetes
+    readOnly: true
+extraVolumes:
+  - name: azure-config-file
+    secret:
+      secretName: azure-config-file
+sources:
+  - ingress
+  - service
+  - gateway-httproute
+  - gateway-tlsroute
+  - gateway-tcproute
+  - gateway-udproute
+  - gateway-grpcroute
