@@ -1,4 +1,5 @@
 # gateway-api-demo
+
 Gateway API demo with Istio
 
 
@@ -10,13 +11,14 @@ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/downloa
 ```
 
 Deploy Istio without ingress-gateway
+
 ```bash
 istioctl install --set profile=minimal -y
 ```
 
 ## As a Cluster Operator
 
-Deploy external-dns:
+(Optional) Deploy external-dns (have an `azure.json` file ready with the credentials of a Service Principal that can operate on the DNS zone ): 
 ```bash
 kubectl create namespace external-dns
 kubectl create secret generic azure-config-file -n external-dns --from-file=azure.json
